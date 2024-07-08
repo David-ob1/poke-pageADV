@@ -8,11 +8,37 @@ sun.addEventListener("click",toggleTheme)
 moon.addEventListener("click",toggleTheme)
 
 
-function toggleTheme (){
-document.querySelector("body").classList.toggle("dark");
 
-}
+document.addEventListener("DOMContentLoaded",e =>{
+    cargarThemeLocalStorage()
+    
+})
 
+    function toggleTheme (){
+        
+        let body = document.querySelector("body")
+        body.classList.toggle("dark");
+        guadarTema(body.classList.contains("dark"))
+    }
+
+   function guadarTema (estado){
+    console.log(estado)
+    localStorage.setItem("darkMode",estado)
+
+   } 
+
+
+   function cargarThemeLocalStorage (){
+    const darkModeActivado = localStorage.getItem("darkMode") === "true"
+    console.log(darkModeActivado)
+    darkModeActivado && document.body.classList.add("dark");
+    // if (darkModeActivado) {
+    //     document.body.classList.add("dark");
+    // }
+
+ 
+    // console.log("hola")
+   }
 
 const fetchPokemon  = async ()=>{
 

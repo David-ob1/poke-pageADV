@@ -161,6 +161,7 @@ main{
     position: relative;
     isolation: isolate;
     overflow: hidden;
+    transition: .5s;
 }
 
 .pokemon-id-back{
