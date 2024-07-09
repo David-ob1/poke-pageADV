@@ -1,45 +1,20 @@
-const API = "https://pokeapi.co/api/v2/pokemon/"
 import {displayElement} from './assets/imprimir.js'
+import {cargarThemeLocalStorage , toggleTheme } from './assets/darkmodePersistence.js'
+
+const API = "https://pokeapi.co/api/v2/pokemon/"
 const listaPokemon = document.getElementById("listaPokemon")
 const sun = document.getElementById("light-mode")
 const moon = document.getElementById("dark-mode")
 
-sun.addEventListener("click",toggleTheme)
-moon.addEventListener("click",toggleTheme)
-
-
-
-document.addEventListener("DOMContentLoaded",e =>{
+document.addEventListener("DOMContentLoaded", e =>{
     cargarThemeLocalStorage()
     
 })
 
-    function toggleTheme (){
-        
-        let body = document.querySelector("body")
-        body.classList.toggle("dark");
-        guadarTema(body.classList.contains("dark"))
-    }
+sun.addEventListener("click",toggleTheme)
+moon.addEventListener("click",toggleTheme)
 
-   function guadarTema (estado){
-    console.log(estado)
-    localStorage.setItem("darkMode",estado)
-
-   } 
-
-
-   function cargarThemeLocalStorage (){
-    const darkModeActivado = localStorage.getItem("darkMode") === "true"
-    console.log(darkModeActivado)
-    darkModeActivado && document.body.classList.add("dark");
-    // if (darkModeActivado) {
-    //     document.body.classList.add("dark");
-    // }
-
- 
-    // console.log("hola")
-   }
-
+    
 const fetchPokemon  = async ()=>{
 
     const promises = []
@@ -89,13 +64,6 @@ const fetchPokemon  = async ()=>{
 
 fetchPokemon()
 
-
-// const mostrarPokemon = (data) => {
-//     console.log(`Nombre: ${data.name}`);
-//     console.log(`ID: ${data.id}`);
-//     console.log(`Tipo: ${data.types.map(typeInfo => typeInfo.type.name).join(', ')}`);
-//     // Aquí puedes agregar más información que desees mostrar
-//   };
 
   function CardTemplate (obj){
    const {types} = obj
