@@ -1,4 +1,4 @@
 export function displayElement (container,template){
-    container.innerHTML += template
+    container.innerHTML = template
 
 }
