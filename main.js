@@ -18,7 +18,7 @@ let actualPage
 let memory = localStorage.getItem("actualPage") 
 memory ? actualPage = memory : actualPage = 1,localStorage.setItem("actualPage",actualPage)
 
-actual.innerHTML = actualPage
+$btnAct.innerHTML = actualPage
 // console.log(actualPage)
 
 
@@ -127,6 +127,8 @@ $btnPrev.addEventListener("click",()=>{
     console.log(page)
     let updatePage = page - 1
     if ( updatePage >= 1){
+    $btnAct.innerHTML = updatePage
+
         localStorage.setItem("actualPage",updatePage)
         mostarPokemons(updatePage)
     }
@@ -139,6 +141,8 @@ $btnNext.addEventListener("click",()=>{
     let page = Number(localStorage.getItem("actualPage"))
     console.log(page)
     let updatePage = page + 1
+    $btnAct.innerHTML = updatePage
+
     localStorage.setItem("actualPage",updatePage)
     mostarPokemons(updatePage)
 
