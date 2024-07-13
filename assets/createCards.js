@@ -1,6 +1,9 @@
 
-function CardTemplate (obj){
+export function CardTemplate (obj){
+    // console.log(obj)
     const {types} = obj
+    // console.log(types)
+
      let typeTemplate = types.map(type => `<p class="${type} tipo">${type}</p>`)
  
      typeTemplate = typeTemplate.join('')

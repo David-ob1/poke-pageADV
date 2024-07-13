@@ -42,6 +42,7 @@
 }
 
 
+
 ul {
     list-style-type: none;
 }
@@ -51,6 +52,23 @@ button {
     border: 0;
     border-radius: 0;
     /* https://www.youtube.com/watch?v=3p5hAvT2iQI */
+}
+
+#buttonsContainer{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+#buttonsContainer button{
+    padding: .5rem;
+    font-size: 20px;
+    background-color: #1B998B;
+    margin: 15px;
+    border: 1px solid white;
+    color:white;
+    border-radius: 5px;
+    min-width: 50px;
+
 }
 
 
